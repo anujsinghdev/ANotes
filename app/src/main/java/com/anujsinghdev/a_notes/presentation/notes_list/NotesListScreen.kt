@@ -3,8 +3,8 @@ package com.anujsinghdev.a_notes.presentation.notes_list
 import android.content.Intent
 import android.net.Uri
 import androidx.activity.compose.BackHandler
-import androidx.activity.compose.rememberLauncherForActivityResult // Added
-import androidx.activity.result.contract.ActivityResultContracts // Added
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -228,7 +228,8 @@ fun NotesListScreen(
                             scope.launch { drawerState.open() }
                         },
                         isDarkTheme = isDarkTheme,
-                        onThemeToggle = onThemeToggle
+                        onThemeToggle = onThemeToggle,
+                        modifier = Modifier.statusBarsPadding() // FIX: Adds padding for status bar
                     )
                 }
             },
